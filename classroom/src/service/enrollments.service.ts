@@ -12,8 +12,8 @@ export class EnrollmentsService {
         private prisma: PrismaService,
     ) {}
 
-    async getByCourseAndStudentId({ courseId, studentId }: GetByCourseAndStudentIdParams) {
-        return await this.prisma.enrollment.findFirst({
+    getByCourseAndStudentId({ courseId, studentId }: GetByCourseAndStudentIdParams) {
+        return this.prisma.enrollment.findFirst({
             where: {
                 courseId,
                 studentId,
